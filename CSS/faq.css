@@ -1,0 +1,134 @@
+/* GENERAL */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #00457C;
+    padding: 1rem;
+  }
+
+  .menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+/* ====== RESPONSIVE PARA <= 1134px ====== */
+@media (max-width: 1134px) {
+  .faq-container {
+    max-width: 95%;   /* se ajusta al ancho de pantalla */
+    padding: 0.5rem;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.95rem;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    padding: 15px 8px;
+  }
+
+  /* Menú de navegación */
+  .nav-links {
+    flex-wrap: wrap;      /* que los enlaces bajen a otra línea si no caben */
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+/* PREGUNTAS FRECUENTES */
+.faq-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.faq-container h1 {
+  text-align: center;
+  color: #00457C;
+  margin-bottom: 2rem;
+}
+
+.faq-item {
+  background: white;
+  border-left: 4px solid #00457C;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  text-align: left;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 1.5rem;
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+.faq-question.active::after {
+  content: '-';
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #f0f8ff;
+  padding: 0 1rem;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+  margin: 1rem 0;
+}
+/* ====== FOOTER ====== */
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+

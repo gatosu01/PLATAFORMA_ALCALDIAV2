@@ -1,0 +1,184 @@
+/* GENERAL */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #00457C;
+    padding: 1rem;
+  }
+
+  .menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+/* ====== RESPONSIVE PARA <= 1134px ====== */
+@media (max-width: 1134px) {
+  .faq-container {
+    max-width: 95%;   /* se ajusta al ancho de pantalla */
+    padding: 0.5rem;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.95rem;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    padding: 15px 8px;
+  }
+
+  /* Menú de navegación */
+  .nav-links {
+    flex-wrap: wrap;      /* que los enlaces bajen a otra línea si no caben */
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.faq-container h1 {
+  text-align: center;
+  color: #00457C;
+  margin-bottom: 2rem;
+}
+
+.faq-item {
+  background: white;
+  border-left: 4px solid #00457C;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  text-align: left;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 1.5rem;
+}
+
+/* Solución para footer alto en FAQ: limitar el padding y evitar que el footer crezca si el contenido es corto */
+footer {
+  background-color: #00457C;
+  color: #F0F0F0;
+  text-align: center;
+  padding: 15px 10px;
+  margin-top: 40px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: unset;
+}
+
+main {
+  min-height: 60vh;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .faq-container {
+    max-width: 98%;
+    padding: 1rem;
+  }
+  footer {
+    font-size: 0.95rem;
+    padding: 12px 5px;
+  }
+}
+@media (max-width: 600px) {
+  .faq-container {
+    padding: 0.5rem;
+  }
+  footer {
+    font-size: 0.9rem;
+    padding: 10px 3px;
+  }
+}
+
+/* Estilos para la sección de bienvenida */
+.title {
+  background: #0059A6;
+  padding: 2.5rem 0 2rem 0;
+  border-radius: 0;
+  margin: 0 0 2rem 0;
+  text-align: center;
+  width: 100vw;
+  box-sizing: border-box;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  margin-top: 0 !important;
+}
+.title h1 {
+  font-size: 2.7rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.title p {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  .title {
+    padding: 1.5rem 0 1rem 0;
+    margin-bottom: 1.5rem;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+  }
+  .title h1 {
+    font-size: 2rem;
+  }
+  .title p {
+    font-size: 1.1rem;
+  }
+}
+
+header {
+  margin-bottom: 0 !important;
+}

@@ -1,0 +1,167 @@
+/* ==== FORMULARIO DE REPORTE ==== */
+.form-mascota {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-mascota label {
+  display: block;
+  margin: 0.8rem 0 0.3rem;
+  font-weight: bold;
+}
+
+.form-mascota input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.form-mascota button {
+  width: 100%;
+  padding: 0.9rem;
+  background: #0077cc;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.form-mascota button:hover {
+  background: #005fa3;
+}
+
+/* ==== LISTADO DE MASCOTAS ==== */
+.mascotas-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.mascota-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.mascota-card:hover {
+  transform: translateY(-5px);
+}
+
+.mascota-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.mascota-card h3 {
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.mascota-card p {
+  margin: 0.3rem 0;
+  color: #555;
+}
+
+/* ==== Cartas denuncias ==== */
+
+
+.denuncias-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.denuncia-card {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
+}
+.denuncia-card:hover { transform: translateY(-4px); }
+
+.denuncia-card img {
+    display: block;
+    margin: 0.5rem auto;
+    max-width: 150px;
+    max-height: 120px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    object-fit: cover;
+}
+
+.opciones-imagen {
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.opciones-imagen a {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+.btn-ver { background: #f4f4f4; color: #333; }
+.btn-descargar { background: #004d66; color: #fff; }
+
+.btn-respondida {
+    background-color: #28a745;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: bold;
+}
+.btn-respondida:hover {
+    background-color: #218838;
+}
+
+
+/* ===== Botón Marcar como encontrada ===== */
+.mascotas-lista form button {
+  background: #28a745; /* verde */
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mascotas-lista form button:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+.mascotas-lista form button:active {
+  transform: scale(0.98);
+}
+
+.mascotas-lista form button::before {
+  content: "🐾 ";
+}

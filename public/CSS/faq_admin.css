@@ -1,0 +1,219 @@
+/* ===== GENERAL ===== */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* ===== HEADER (MENÚ SUPERIOR) ===== */
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+
+
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+main {
+  margin-left: 240px; /* espacio de sidebar en escritorio */
+  padding: 30px;
+  flex: 1;
+}
+
+h1 {
+  text-align: center;
+  color: #004d66;
+  margin-bottom: 2rem;
+}
+
+/* ===== FORMULARIO DE AGREGAR FAQ ===== */
+.faq-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 30px;
+  max-width: 600px;
+}
+
+.faq-form input[type="text"],
+.faq-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.faq-form button {
+  background-color: #0077aa;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.faq-form button:hover {
+  background-color: #005f88;
+}
+
+/* ===== LISTA DE FAQS ===== */
+.faq-list {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background-color: #fff;
+  padding: 1.25rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.faq-item strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #004d66;
+  font-size: 1.1rem;
+}
+
+.faq-item p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #34495e;
+  line-height: 1.5;
+}
+
+/* ===== BOTONES ===== */
+.faq-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.faq-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.faq-actions .edit-btn {
+  background-color: #ffaa00;
+  color: white;
+}
+
+.faq-actions .edit-btn:hover {
+  background-color: #cc8800;
+  transform: scale(1.05);
+}
+
+.faq-actions .delete-btn {
+  background-color: #cc0000;
+  color: white;
+}
+
+.faq-actions .delete-btn:hover {
+  background-color: #990000;
+  transform: scale(1.05);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  main {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: #004d66;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    padding: 10px 0;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  .faq-form {
+    padding: 15px;
+  }
+
+  .faq-form input[type="text"],
+  .faq-form textarea {
+    font-size: 14px;
+  }
+
+  .faq-form button {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .faq-actions {
+    flex-direction: column;
+  }
+
+  .faq-actions button {
+    width: 100%;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 1rem;
+  }
+
+  .faq-form {
+    padding: 10px;
+  }
+
+  .faq-form input[type="text"],
+  .faq-form textarea {
+    font-size: 13px;
+  }
+
+  .faq-form button {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .faq-actions button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}

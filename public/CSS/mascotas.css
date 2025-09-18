@@ -1,0 +1,123 @@
+/* MASCOTAS EXTRAVIADAS */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #003F88;
+}
+
+.mascotas-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  padding: 30px;
+}
+
+.mascotas-container h2 {
+  color: #00457C;
+  margin-bottom: 20px;
+}
+
+.mascota-card {
+  background: #f9f9f9;
+  border-left: 4px solid #00457C;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.mascota-card img {
+  max-width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.mascota-info {
+  font-size: 1.1em;
+  color: #003F88;
+}
+
+.mascota-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.mascota-actions button {
+  background: #00457C;
+  color: #FFD700;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.mascota-actions button:hover {
+  background: #003366;
+  color: #fff;
+}
+
+/* ==== FORMULARIO DE REPORTE ==== */
+.form-mascota {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-mascota label {
+  display: block;
+  margin: 0.8rem 0 0.3rem;
+  font-weight: bold;
+}
+
+.form-mascota input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.form-mascota button {
+  width: 100%;
+  padding: 0.9rem;
+  background: #0077cc;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.form-mascota button:hover {
+  background: #005fa3;
+}
+
+/* ==== LISTADO DE MASCOTAS ==== */
+.mascotas-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.mascota-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.mascota-card:hover {
+  transform: translateY(-5px);
+}

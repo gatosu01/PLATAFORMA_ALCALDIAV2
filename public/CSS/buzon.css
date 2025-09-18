@@ -1,0 +1,150 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #E6F0FA; /* Azul muy claro de fondo */
+  color: #003366; /* Azul oscuro para texto principal */
+  line-height: 1.6;
+}
+
+/* BUZÓN TITLE */
+.buzon-title {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background-color: #0059A6; /* Azul medio para la sección */
+}
+
+.buzon-title h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #FFFFFF;
+}
+
+.buzon-title p {
+  font-size: 1.2em;
+  color: #F0F0F0;
+}
+
+/* FORMULARIO */
+.buzon-form {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #FFFFFF; /* Fondo blanco para contraste */
+  color: #003366; /* Azul oscuro para texto */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+.buzon-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.buzon-form label {
+  margin: 15px 0 5px;
+  font-weight: bold;
+}
+
+.buzon-form input,
+.buzon-form textarea {
+  padding: 10px;
+  border: 1px solid #99C2E6; /* Azul claro para bordes */
+  border-radius: 6px;
+  font-size: 1em;
+  margin-bottom: 16px;
+}
+
+.buzon-form input:focus,
+.buzon-form textarea:focus {
+  outline: none;
+  border-color: #00457C;
+}
+
+.buzon-form button {
+  background: #00457C;
+  color: #FFD700;
+  border: none;
+  padding: 12px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.buzon-form button:hover {
+  background-color: #003366;
+  color: #fff;
+}
+
+footer {
+  background-color: #00457C;
+  color: #F0F0F0;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 40px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  footer {
+    font-size: 0.9rem;
+    padding: 15px 5px;
+  }
+}
+
+/* Responsividad para formularios y contenedores */
+@media (max-width: 900px) {
+  .buzon-form {
+    max-width: 98%;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .buzon-title {
+    padding: 30px 10px 20px;
+  }
+  .buzon-form {
+    padding: 10px;
+  }
+}
+
+/* TITLE */
+.title {
+  background: #0059A6;
+  padding: 2.5rem 0 2rem 0;
+  border-radius: 0;
+  margin: 0 0 2rem 0;
+  text-align: center;
+  width: 100vw;
+  box-sizing: border-box;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  margin-top: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .title {
+    padding: 1.5rem 0 1rem 0;
+    margin-bottom: 1.5rem;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+  }
+}

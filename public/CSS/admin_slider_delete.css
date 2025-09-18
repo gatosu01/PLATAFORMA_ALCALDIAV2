@@ -1,0 +1,48 @@
+/* ====== ADMIN SLIDER DELETE ====== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #333;
+  box-sizing: border-box;
+}
+
+main {
+  margin-left: 240px;
+  padding: 30px;
+  flex: 1;
+}
+
+h1 {
+  color: #c0392b;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.delete-warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.delete-btn {
+  background-color: #c0392b;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.delete-btn:hover {
+  background-color: #922b21;
+}
