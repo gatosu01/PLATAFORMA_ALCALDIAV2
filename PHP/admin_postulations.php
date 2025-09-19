@@ -59,10 +59,10 @@ $result = $conexion->query("
                 <td><?= htmlspecialchars($row['telefono']) ?></td>
                 <td><?= htmlspecialchars($row['departamento_nombre']) ?></td>
                 <td><?= htmlspecialchars($row['subdepartamento_nombre']) ?></td>
-                <td><a href="../UPLOADS/cv/<?= $row['archivo_pdf'] ?>" target="_blank">Ver PDF</a></td>
+                <td><a href="/Alcaldia/view-cv?id=<?= $row['id'] ?>" target="_blank">Ver PDF</a></td>
                 <td><?= $row['fecha_postulacion'] ?></td>
                 <td>
-                    <form action="../PHP/delete_cv.php" method="POST" onsubmit="return confirm('¿Estás seguro que deseas eliminar este CV?');">
+                    <form action="/Alcaldia/delete-cv" method="POST" onsubmit="return confirm('¿Estás seguro que deseas eliminar este CV?');">
                         <input type="hidden" name="id" value="<?= $row['id'] ?>">
                         <button type="submit" class="btn-delete">Eliminar</button>
                     </form>

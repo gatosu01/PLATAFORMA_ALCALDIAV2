@@ -62,6 +62,7 @@ return [
         '/notification-admin' => [NotificationAdminController::class, 'index'],
         '/denuncia-animal' => [DenunciaAnimalController::class, 'index'],
         '/header' => [HeaderController::class, 'index'],
+        '/view-cv' => [App\Controllers\ViewCvController::class, 'index'],
     '/admin-slider' => [AdminSliderController::class, 'index'],
     '/admin-slider-delete' => [AdminSliderDeleteController::class, 'index'],
         '/subdepartament' => [SubdepartamentController::class, 'index'],
@@ -93,6 +94,7 @@ return [
         '/my-complaints' => [MyComplaintsController::class, 'index'],
         '/buzon/procesar' => [BuzonController::class, 'procesar'],
         '/suggestions_admin/eliminar' => [SuggestionsAdminController::class, 'eliminar'],
+    '/delete-cv' => [DeleteCvController::class, 'index'],
     '/postulate/process' => [PostulateController::class, 'process'],
     ],
 ];
