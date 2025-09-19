@@ -1,11 +1,13 @@
 // AJAX para cargar subdepartamentos dinámicamente
+// Adaptado a la nueva estructura MVC
+
 document.getElementById("departamento").addEventListener("change", function() {
     let deptoId = this.value;
     let subSelect = document.getElementById("subdepartamento");
     subSelect.innerHTML = "<option value=''>Cargando...</option>";
 
     if (deptoId) {
-        fetch("../PHP/get_subdepartament.php?departamento_id=" + deptoId)
+        fetch(`/Alcaldia/get-subdepartament?departamento_id=${deptoId}`)
             .then(res => res.json())
             .then(data => {
                 subSelect.innerHTML = "<option value=''>Seleccione un subdepartamento</option>";

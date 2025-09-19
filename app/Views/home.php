@@ -89,24 +89,24 @@
             <div class="cuadroblanco">
                 <h2>Postúlate</h2>
                 <p>Si deseas formar parte de nuestro equipo, envíanos tu currículum en formato PDF.</p>
-                <button class="nav-button" data-href="/Alcaldia/public/postulate">Enviar CV</button>
+                <button class="nav-button" data-href="/Alcaldia/postulate">Enviar CV</button>
             </div>
         </section>
         <section class="mascotas" id="mascotas">
             <div class="cuadroblanco">
                 <h2>🐾 Reporta tu Mascota</h2>
                 <p>Si tu mascota está perdida, repórtala aquí.</p>
-                <button class="nav-button" data-href="/Alcaldia/public/reportar-mascotas">Reportar Mascota</button>
+                <button class="nav-button" data-href="/Alcaldia/reportar-mascotas">Reportar Mascota</button>
             </div>
             <div class="cuadroblanco">
                 <h2>🐶 Mascotas Extraviadas</h2>
                 <p>Mira todas las mascotas reportadas como extraviadas.</p>
-                <button class="nav-button" data-href="/Alcaldia/public/mascotas-extraviadas">Ver Mascotas</button>
+                <button class="nav-button" data-href="/Alcaldia/mascotas-extraviadas">Ver Mascotas</button>
             </div>
             <div class="cuadroblanco">
                 <h2>🚨 Denuncia Animal</h2>
                 <p>Reporta casos de maltrato o abandono animal.</p>
-                <button class="nav-button" data-href="/Alcaldia/public/denuncia-animal">Hacer Denuncia</button>
+                <button class="nav-button" data-href="/Alcaldia/denuncia-animal">Hacer Denuncia</button>
             </div>
         </section>
         <div class="mensaje-centro">
@@ -116,5 +116,12 @@
     <?php include __DIR__ . '/footer.php'; ?>
     <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
     <script src="/Alcaldia/public/JS/slider_auto.js"></script>
+    <script>
+      document.querySelectorAll('.nav-button').forEach(btn => {
+        btn.addEventListener('click', function() {
+          window.location.href = btn.getAttribute('data-href');
+        });
+      });
+    </script>
 </body>
 </html>

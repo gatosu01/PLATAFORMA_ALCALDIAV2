@@ -13,13 +13,19 @@ class ProcessComplaintsController {
 
         // Validar reCAPTCHA
         if (!isset($_POST['g-recaptcha-response'])) {
-            die("Error: Debes completar el reCAPTCHA.");
+            $_SESSION['complaint_error'] = 'Debes completar el reCAPTCHA.';
+            header('Location: /Alcaldia/complaints-reports');
+            exit;
         }
         $recaptcha = $_POST['g-recaptcha-response'];
         $secretKey = "6LcST5orAAAAABAKQ78E0Oj0aXFgMd6G9mtlQGIY";
         $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$recaptcha");
         $responseKeys = json_decode($response, true);
-        if (!$responseKeys["success"]) die("Error: Verifica el reCAPTCHA.");
+        if (!$responseKeys["success"]) {
+            $_SESSION['complaint_error'] = 'Verifica el reCAPTCHA.';
+            header('Location: /Alcaldia/complaints-reports');
+            exit;
+        }
 
        
         // Determinar usuario: logeado o anónimo (acepta id=0)
@@ -38,7 +44,9 @@ class ProcessComplaintsController {
 
         // Validar campos obligatorios
         if (empty($_POST['tipo']) || empty($_POST['department_id']) || empty($_POST['lat']) || empty($_POST['lng']) || empty($_POST['ubication']) || empty($_POST['complaint'])) {
-            die("Error: Todos los campos obligatorios deben completarse.");
+            $_SESSION['complaint_error'] = 'Todos los campos obligatorios deben completarse.';
+            header('Location: /Alcaldia/complaints-reports');
+            exit;
         }
 
         // Capturar datos
@@ -51,7 +59,9 @@ class ProcessComplaintsController {
         $rowDept = $stmtDept->fetch(\PDO::FETCH_ASSOC);
         $nombre_departamento = $rowDept ? $rowDept['nombre'] : null;
         if (empty($nombre_departamento)) {
-            die("Error: Departamento inválido o inactivo.");
+            $_SESSION['complaint_error'] = 'Departamento inválido o inactivo.';
+            header('Location: /Alcaldia/complaints-reports');
+            exit;
         }
 
         $lat = $_POST['lat'];
@@ -80,7 +90,9 @@ class ProcessComplaintsController {
                 }
             }
         } else {
-            die("Error: Debes subir al menos una imagen.");
+            $_SESSION['complaint_error'] = 'Debes subir al menos una imagen.';
+            header('Location: /Alcaldia/complaints-reports');
+            exit;
         }
 
         // Guardar en base de datos (PDO)
@@ -109,7 +121,9 @@ class ProcessComplaintsController {
             exit;
         } else {
             $errorInfo = $stmt->errorInfo();
-            echo "Error al guardar: " . $errorInfo[2];
+            $_SESSION['complaint_error'] = 'Error al guardar: ' . $errorInfo[2];
+            header('Location: /Alcaldia/complaints-reports');
+            exit;
         }
     }
 }
