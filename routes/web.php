@@ -94,7 +94,8 @@ return [
         '/my-complaints' => [MyComplaintsController::class, 'index'],
         '/buzon/procesar' => [BuzonController::class, 'procesar'],
         '/suggestions_admin/eliminar' => [SuggestionsAdminController::class, 'eliminar'],
-    '/delete-cv' => [DeleteCvController::class, 'index'],
-    '/postulate/process' => [PostulateController::class, 'process'],
+        '/delete-cv' => [DeleteCvController::class, 'index'],
+        '/postulate/process' => [PostulateController::class, 'process'],
+        '/reportar-mascota' => [ReportarMascotasController::class, 'store'],
     ],
 ];

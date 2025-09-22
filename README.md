@@ -42,27 +42,25 @@ El sistema está basado en el patrón **Modelo-Vista-Controlador (MVC)**, lo que
    - Todas las peticiones HTTP pasan por el archivo `public/.htaccess`, que redirige cualquier URL (excepto archivos/carpetas existentes) a `public/index.php`.
    - Ejemplo de regla:
      ```
+    # Documentación de la Estructura y Funcionalidad MVC
+
+    ## Estructura General
+
+    - `app/Controllers/`: Controladores para cada módulo (quejas, postulaciones, etc.)
+    - `app/Models/`: Modelos para acceso a datos y lógica de negocio
+    - `app/Views/`: Vistas PHP para la interfaz de usuario
+    - `public/`: Archivos estáticos (CSS, JS, imágenes) y punto de entrada (`index.php`)
+    - `routes/web.php`: Definición de rutas MVC
+    - `config/database.php`: Configuración de la base de datos
+    - `UPLOADS/`: Archivos subidos por usuarios (CV, imágenes)
      RewriteEngine On
      RewriteCond %{REQUEST_FILENAME} !-f
      RewriteCond %{REQUEST_FILENAME} !-d
      RewriteRule ^(.*)$ index.php [QSA,L]
-     ```
-
-2. **Punto de Entrada: `public/index.php`**
-   - Este archivo carga el autoload y el router:
-     ```php
      require_once __DIR__ . '/../config/bootstrap.php';
      require_once __DIR__ . '/../routes/web.php';
-     use App\Core\Router;
-     $router = new Router();
-     $router->dispatch();
-     ```
-
 3. **Router (`app/Core/Router.php`)**
    - El router recibe la petición, normaliza la URI (por ejemplo, `/Alcaldia/public/` se convierte en `/`), y busca la ruta en el archivo `routes/web.php`.
-   - Si la ruta existe, llama al controlador y método correspondiente. Si no, muestra "Página no encontrada".
-   - Ejemplo:
-     ```php
      $routes = require __DIR__ . '/../../routes/web.php';
      if (isset($routes[$method][$uri])) {
          [$controller, $action] = $routes[$method][$uri];
@@ -85,12 +83,7 @@ El sistema está basado en el patrón **Modelo-Vista-Controlador (MVC)**, lo que
          ],
          'POST' => [
              '/login' => [SignInController::class, 'login'],
-             // ...
-         ],
-     ];
-     ```
 
-5. **Controladores (`app/Controllers/`)**
    - Cada controlador gestiona una funcionalidad específica. Por ejemplo, `HomeController` carga la vista principal:
      ```php
      class HomeController {

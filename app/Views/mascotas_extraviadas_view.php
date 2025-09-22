@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mascotas Extraviadas - Alcaldía de Santiago</title>
-  <link rel="stylesheet" href="/public/CSS/index.css">
-  <link rel="stylesheet" href="/Alcaldia/public/CSS/header.css" />
-  <link rel="stylesheet" href="/public/CSS/mascotas.css">
+  <link rel="stylesheet" href="/Alcaldia/CSS/index.css">
+  <link rel="stylesheet" href="/Alcaldia/CSS/header.css">
+  <link rel="stylesheet" href="/Alcaldia/CSS/mascotas.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
 </head>
@@ -18,7 +18,7 @@
     <?php if (!empty($mascotas)): ?>
       <?php foreach ($mascotas as $m): ?>
         <div class="mascota-card">
-          <img src="/public/UPLOADS/mascotas/<?= htmlspecialchars($m['foto']) ?>" alt="Mascota">
+          <img src="/Alcaldia/UPLOADS/mascotas/<?= htmlspecialchars($m['foto']) ?>" alt="Mascota">
           <h3><?= htmlspecialchars($m['nombre_mascota']) ?></h3>
           <p><strong>Dueño(s):</strong> <?= htmlspecialchars($m['nombre_dueno']) ?></p>
           <p><strong>Última vez vista en:</strong> <?= htmlspecialchars($m['ultima_vista']) ?></p>
@@ -47,6 +47,6 @@ document.addEventListener("DOMContentLoaded", function() {
     );
 });
 </script>
-<?php unset($_SESSION['mascota_reportada']); endif; ?>
-</body>
-</html>
+<?php 
+unset($_SESSION['mascota_reportada']); // Limpiar variable
+endif; ?>
