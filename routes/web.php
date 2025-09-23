@@ -19,6 +19,7 @@ use App\Controllers\ComplaintsSuccessController;
 use App\Controllers\AnimalAdminPanelController;
 use App\Controllers\NotificationAdminController;
 use App\Controllers\DenunciaAnimalController;
+use App\Controllers\DenunciaAnimalPublicController;
 use App\Controllers\HeaderController;
 use App\Controllers\AdminSliderController;
 use App\Controllers\SubdepartamentController;
@@ -41,6 +42,7 @@ use App\Controllers\ReportarMascotasAdminController;
 
 return [
     'GET' => [
+    '/denuncia-animal-admin' => [DenunciaAnimalController::class, 'index'],
         '/' => [HomeController::class, 'index'],
         '/home' => [HomeController::class, 'index'],
         '/admin' => [AdminPanelController::class, 'index'],
@@ -60,7 +62,7 @@ return [
         '/complaints-success' => [ComplaintsSuccessController::class, 'index'],
         '/animal-admin-panel' => [AnimalAdminPanelController::class, 'index'],
         '/notification-admin' => [NotificationAdminController::class, 'index'],
-        '/denuncia-animal' => [DenunciaAnimalController::class, 'index'],
+    '/denuncia-animal' => [DenunciaAnimalPublicController::class, 'index'],
         '/header' => [HeaderController::class, 'index'],
         '/view-cv' => [App\Controllers\ViewCvController::class, 'index'],
     '/admin-slider' => [AdminSliderController::class, 'index'],
@@ -87,6 +89,8 @@ return [
         '/suggestions_admin' => [SuggestionsAdminController::class, 'index'],
     ],
     'POST' => [
+    '/denuncia-animal-admin' => [DenunciaAnimalController::class, 'index'],
+    '/denuncia-animal' => [DenunciaAnimalPublicController::class, 'index'],
         '/login' => [SignInController::class, 'login'],
         '/register' => [SignUpController::class, 'register'],
         '/sign-up' => [SignUpController::class, 'index'],
@@ -97,5 +101,6 @@ return [
         '/delete-cv' => [DeleteCvController::class, 'index'],
         '/postulate/process' => [PostulateController::class, 'process'],
         '/reportar-mascota' => [ReportarMascotasController::class, 'store'],
+        '/cambiar-estado-mascota' => [CambiarEstadoMascotaController::class, 'index'],
     ],
 ];

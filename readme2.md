@@ -1,9 +1,49 @@
 # Informe Final de Trabajo de Graduación
 
+h. Introducción
+
+La presente introducción ofrece una visión general del proyecto desarrollado para la Alcaldía de Santiago, enfocado en la gestión digital de denuncias y quejas ciudadanas.
+
+**Planteamiento del problema:**
+Actualmente, la gestión de denuncias y quejas en la Alcaldía de Santiago se realiza de manera tradicional, lo que genera demoras, largas filas, pérdida de información y falta de transparencia. Los procesos manuales dificultan el seguimiento de casos y la atención eficiente a los ciudadanos, evidenciando la necesidad de modernizar y digitalizar estos trámites para mejorar la calidad del servicio público.
+
+**Objetivos:**
+- Objetivo general: Desarrollar una plataforma web que centralice la gestión de trámites, denuncias y quejas, optimizando los procesos administrativos y mejorando la experiencia de usuario mediante una arquitectura MVC y prácticas ágiles XP.
+- Objetivos específicos:
+	1. Implementar módulos para la gestión de denuncias, quejas y postulaciones, permitiendo operaciones CRUD completas.
+	2. Integrar un sistema de autenticación y autorización por roles (usuario, administrador).
+	3. Construir una interfaz responsiva y accesible, con notificaciones y validaciones visuales.
+	4. Utilizar una base de datos relacional para almacenar y consultar información de manera segura.
+	5. Garantizar la seguridad de los datos y la protección de archivos sensibles.
+
+**Metodología:**
+El desarrollo se basó en la metodología ágil Extreme Programming (XP), priorizando la simplicidad, la comunicación constante y la retroalimentación rápida. Se emplearon herramientas como Visual Studio Code, Git, Composer, XAMPP y MySQL para facilitar la colaboración, el control de versiones y la integración continua.
+
+**Estructura del documento:**
+El informe está organizado en capítulos que abordan:
+- Fundamentación del proyecto: Justificación, problemática y objetivos.
+- Marco teórico: Conceptos clave y tecnologías utilizadas.
+- Metodología: Proceso de desarrollo y herramientas.
+- Diseño y desarrollo: Arquitectura, interfaz y backend.
+- Pruebas y validación: Tipos de pruebas y resultados esperados.
+- Conclusiones: Cambios recientes, recomendaciones y perspectivas futuras.
+
 > **Nota:** Este documento ha sido generado automáticamente por GitHub Copilot, analizando el código fuente y la estructura actual del proyecto en el workspace. El contenido está organizado y redactado para cumplir con los requisitos de un informe académico extenso y detallado, siguiendo la estructura proporcionada.
 
----
 
+## Autoload y configuración con bootstrap.php
+
+El archivo `config/bootstrap.php` implementa el sistema de autoload para las clases del proyecto. Utiliza la función `spl_autoload_register` para cargar automáticamente cualquier clase bajo el namespace `App\` desde la carpeta `app/`, siguiendo la estructura de subcarpetas (por ejemplo, `App\Controllers\MiControlador` se carga desde `app/Controllers/MiControlador.php`).
+
+**Ventajas del autoload:**
+- Elimina la necesidad de usar `require` o `include` manualmente en cada archivo.
+- Facilita la organización y escalabilidad del código bajo el patrón MVC.
+- Permite que los controladores, modelos y helpers se carguen automáticamente cuando se instancian.
+
+**Ejemplo de uso:**
+Si se instancia la clase `App\Models\Conexion`, el autoload buscará y cargará automáticamente el archivo `app/Models/Conexion.php`.
+
+Este sistema asegura que el proyecto mantenga una estructura limpia y desacoplada, facilitando el mantenimiento y la extensión futura.
 ## Capítulo 1: Fundamentación del Proyecto
 
 ### 1.1 Problemática y Justificación
@@ -13,6 +53,52 @@ El presente proyecto surge como respuesta a la necesidad de modernizar y optimiz
 La problemática principal abordada es la ineficiencia y lentitud de los procesos administrativos tradicionales, que generan largas filas, demoras y falta de transparencia. El software resuelve esto digitalizando los trámites, automatizando la recepción y seguimiento de solicitudes, y ofreciendo canales directos de comunicación. La relevancia radica en la mejora de la calidad de vida de los ciudadanos, la reducción de la carga administrativa y el fortalecimiento de la transparencia institucional.
 
 La justificación técnica se fundamenta en la adopción de una arquitectura MVC y la metodología XP, que garantizan escalabilidad, mantenibilidad y entregas rápidas. El uso de controladores, modelos y vistas bien definidos, junto con rutas centralizadas y validaciones de seguridad, permite una solución robusta y adaptable a futuras necesidades municipales.
+
+### 1.3 Diagrama de Arquitectura del Proyecto
+
+```mermaid
+graph TD
+	A[Usuario] -- Solicitud HTTP --> B[Router]
+	B -- Redirige a --> C[Controlador]
+	C -- Interactúa con --> D[Modelo]
+	D -- Consulta/Actualiza --> E[(Base de Datos)]
+	C -- Envía datos a --> F[Vista]
+	F -- Renderiza HTML --> A
+	C -- Puede usar --> G[Helpers]
+	B -- Define rutas en --> H[routes/web.php]
+	C -- Ubicado en --> I[app/Controllers]
+	D -- Ubicado en --> J[app/Models]
+	F -- Ubicado en --> K[app/Views]
+	G -- Ubicado en --> L[app/Helpers]
+```
+
+Este diagrama representa el flujo principal de la plataforma:
+
+#### Explicación detallada del diagrama MVC
+
+1. **Usuario:** Interactúa con la plataforma a través de un navegador web, enviando solicitudes HTTP (por ejemplo, acceder a una página, enviar un formulario de queja, postulación, etc.).
+
+2. **Router:** Recibe la solicitud del usuario y determina qué controlador debe gestionarla. El router está definido en el archivo `routes/web.php`, donde se especifican las rutas y los métodos de los controladores asociados a cada URL.
+
+3. **Controlador:** Es el núcleo de la lógica de negocio. El controlador recibe la solicitud, valida los datos, decide qué acciones tomar y puede interactuar con los modelos para acceder o modificar información en la base de datos. Los controladores están ubicados en `app/Controllers/` y cada uno gestiona una funcionalidad específica (por ejemplo, quejas, postulaciones, administración).
+
+4. **Modelo:** Encapsula la lógica de acceso y manipulación de datos. El modelo se comunica con la base de datos (MySQL) usando PDO, ejecutando consultas y devolviendo resultados al controlador. Los modelos están en `app/Models/` y representan entidades como usuarios, quejas, postulaciones, etc.
+
+5. **Base de Datos:** Almacena toda la información relevante del sistema: usuarios, trámites, quejas, archivos subidos, etc. El modelo realiza operaciones CRUD (crear, leer, actualizar, eliminar) sobre la base de datos.
+
+6. **Vista:** Recibe los datos procesados por el controlador y genera la interfaz HTML que se muestra al usuario. Las vistas están en `app/Views/` y pueden incluir componentes visuales, formularios y tablas dinámicas.
+
+7. **Helpers:** Son utilidades o funciones auxiliares que pueden ser usadas por los controladores para tareas específicas, como validaciones, formateo de datos, envío de correos, etc. Se encuentran en `app/Helpers/`.
+
+8. **Flujo completo:**
+	- El usuario realiza una acción en la interfaz.
+	- El router interpreta la URL y llama al controlador adecuado.
+	- El controlador valida y procesa la solicitud, usando modelos y helpers si es necesario.
+	- El modelo interactúa con la base de datos y devuelve los datos al controlador.
+	- El controlador pasa los datos a la vista.
+	- La vista genera el HTML y lo envía al navegador del usuario.
+
+Este flujo asegura una separación clara de responsabilidades, facilitando el mantenimiento, la escalabilidad y la seguridad del sistema.
 
 ### 1.2 Objetivos
 

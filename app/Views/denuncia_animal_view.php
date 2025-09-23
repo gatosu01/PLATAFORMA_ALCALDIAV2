@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Denuncia Animal</title>
-    <link rel="stylesheet" href="/public/CSS/index.css">
-    <link rel="stylesheet" href="/Alcaldia/public/CSS/header.css" />
-    <link rel="stylesheet" href="/public/CSS/mascotas.css">
+    <link rel="stylesheet" href="/Alcaldia/CSS/index.css">
+    <link rel="stylesheet" href="/Alcaldia/CSS/header.css" />
+    <link rel="stylesheet" href="/Alcaldia/CSS/mascotas.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
 </head>
@@ -13,7 +13,7 @@
     <?php include __DIR__ . '/header.php'; ?>
     <main>
         <h2 style="text-align:center; margin-top:1rem;">🚨 Denuncia Animal</h2>
-        <form action="/denuncia-animal" method="POST" enctype="multipart/form-data" class="form-mascota">
+    <form action="/Alcaldia/denuncia-animal" method="POST" enctype="multipart/form-data" class="form-mascota">
             <label for="foto">Foto de la denuncia animal:</label>
             <input type="file" name="foto" id="foto" accept="image/*" required>
             <label for="ubicacion_mascota">Ubicación exacta</label>
@@ -27,5 +27,19 @@
     </main>
     <?php include __DIR__ . '/footer.php'; ?>
     <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+    <?php if(isset($denuncia_enviada) && $denuncia_enviada): ?>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        alertify.alert(
+            "🚨 Denuncia Enviada",
+            "¡Tu denuncia ha sido registrada correctamente! Gracias por tu colaboración.",
+            function(){
+                alertify.success('Denuncia registrada');
+            }
+        );
+    });
+    </script>
+    <?php endif; ?>
 </body>
 </html>
