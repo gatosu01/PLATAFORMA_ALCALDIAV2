@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Panel Bienestar Animal - Alcaldía de Santiago</title>
-<link rel="stylesheet" href="/Alcaldia/CSS/index.css">
-<link rel="stylesheet" href="/Alcaldia/CSS/header_admin.css">
-<link rel="stylesheet" href="/Alcaldia/CSS/mascotas.css">
+<link rel="stylesheet" href="/Alcaldia/public/CSS/index.css">
+<link rel="stylesheet" href="/Alcaldia/public/CSS/header_admin.css">
+<link rel="stylesheet" href="/Alcaldia/public/CSS/mascotas.css">
 </head>
 <body>
-<?php include __DIR__ . '/../../PHP/header_animal.php'; ?>
+<?php include __DIR__ . '/header_animal.php'; ?>
 <main>
 <h1 style="text-align:center; margin-top:1rem;">Panel Bienestar Animal</h1>
 <section class="mascotas-admin">

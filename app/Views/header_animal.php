@@ -5,8 +5,8 @@
     <div class="sidebar-toggle" id="sidebar-toggle">☰</div>
   </div>
   <ul id="sidebar-links">
-  <li><a href="/Alcaldia/app/Views/animal_admin_panel.php" class="<?= basename($_SERVER['PHP_SELF']) == 'animal_admin_panel.php' ? 'active' : '' ?>">Mascotas Extraviadas</a></li>
-  <li><a href="/Alcaldia/app/Views/admin_denuncia_animal.php" class="<?= basename($_SERVER['PHP_SELF']) == 'admin_denuncia_animal.php' ? 'active' : '' ?>">Denuncia Animal</a></li>
+  <li><a href="/Alcaldia/animal-admin-panel" class="<?= strpos($_SERVER['REQUEST_URI'], 'animal-admin-panel') !== false ? 'active' : '' ?>">Mascotas Extraviadas</a></li>
+  <li><a href="/Alcaldia/denuncia-animal-admin" class="<?= strpos($_SERVER['REQUEST_URI'], 'denuncia-animal-admin') !== false ? 'active' : '' ?>">Denuncia Animal</a></li>
   <li><a href="/Alcaldia/logout">Cerrar Sesión</a></li>
   </ul>
 </div>
