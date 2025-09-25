@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Denuncia Animal</title>
-    <link rel="stylesheet" href="/Alcaldia/CSS/index.css">
-    <link rel="stylesheet" href="/Alcaldia/CSS/header.css" />
-    <link rel="stylesheet" href="/Alcaldia/CSS/mascotas.css">
+    <link rel="stylesheet" href="/Alcaldia/public/CSS/index.css">
+    <link rel="stylesheet" href="/Alcaldia/public/CSS/header.css" />
+    <link rel="stylesheet" href="/Alcaldia/public/CSS/mascotas.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
 </head>

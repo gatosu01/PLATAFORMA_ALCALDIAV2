@@ -34,7 +34,7 @@
                     <?php endforeach; ?>
                     <?php foreach ($slider_images as $index => $image): ?>
                         <div class="slide <?= $index === 0 ? 'first' : '' ?>">
-                            <img src="/Alcaldia/IMG/<?= htmlspecialchars($image['image_path']) ?>" alt="<?= htmlspecialchars($image['alt_text']) ?>">
+                            <img src="/Alcaldia/public/IMG/<?= htmlspecialchars($image['image_path']) ?>" alt="<?= htmlspecialchars($image['alt_text']) ?>">
                         </div>
                     <?php endforeach; ?>
                     <div class="navigation-manual">
@@ -114,14 +114,9 @@
         </div>
     </main>
     <?php include __DIR__ . '/footer.php'; ?>
-    <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-    <script src="/Alcaldia/public/JS/slider_auto.js"></script>
-    <script>
-      document.querySelectorAll('.nav-button').forEach(btn => {
-        btn.addEventListener('click', function() {
-          window.location.href = btn.getAttribute('data-href');
-        });
-      });
-    </script>
+        <script src="/Alcaldia/public/JS/scroll_buttons.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+        <script src="/Alcaldia/public/JS/slider_auto.js"></script>
+        <script src="/Alcaldia/public/JS/nav_buttons.js"></script>
 </body>
 </html>

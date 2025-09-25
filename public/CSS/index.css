@@ -33,7 +33,7 @@ h1, h2, h3 {
 }
 
 main {
-  padding: 0 1rem;
+  padding: 0 0;
 }
 
 /* ====== BOTONES DE NAVEGACIÓN SUPERIOR ====== */
@@ -286,7 +286,7 @@ form select:hover {
   border-radius: 0;
   margin: 0 0 2rem 0;
   text-align: center;
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
   position: relative;
   left: 50%;
@@ -309,7 +309,7 @@ form select:hover {
   .title {
     padding: 1.5rem 0 1rem 0;
     margin-bottom: 1.5rem;
-    width: 100vw;
+    width: 100%;
     left: 50%;
     right: 50%;
     transform: translateX(-50%);
@@ -562,9 +562,12 @@ footer p {
     padding-right: 2px !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    width: 100vw !important;
+    width: 100% !important;
     box-sizing: border-box !important;
   }
+body {
+  overflow-x: hidden;
+}
   .botones-navegacion button,
   .mascotas button,
   .postulate .cuadroblanco button {

@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reportar Mascota - Alcaldía de Santiago</title>
-  <link rel="stylesheet" href="/Alcaldia/CSS/index.css">
-  <link rel="stylesheet" href="/Alcaldia/CSS/header.css">
-  <link rel="stylesheet" href="/Alcaldia/CSS/mascotas.css">
+  <link rel="stylesheet" href="/Alcaldia/public/CSS/index.css">
+  <link rel="stylesheet" href="/Alcaldia/public/CSS/header.css">
+  <link rel="stylesheet" href="/Alcaldia/public/CSS/mascotas.css">
 </head>
 <body>
 <?php include __DIR__ . '/header.php'; ?>

@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
     if (count($positionsOccupied) >= 3) {
         $error = "No se pueden agregar más imágenes. Todas las posiciones están ocupadas.";
     } else {
-        $targetDir = __DIR__ . '/../../IMG/';
+    $targetDir = __DIR__ . '/../../public/IMG/';
         $fileName = basename($_FILES["image"]["name"]);
         $targetFilePath = $targetDir . $fileName;
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)) {
