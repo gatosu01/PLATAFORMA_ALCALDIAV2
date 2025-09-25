@@ -24,6 +24,13 @@
         <section class="botones-navegacion">
             <button class="scroll-button" data-section-id="notificaciones">🔔 Notificaciones</button>
             <button class="scroll-button" data-section-id="banco-info">💳 Pagos</button>
+            <button class="scroll-button" data-section-id="mascotas">🐾 Mascotas</button>
+            <button class="scroll-button" id="btn-mascotas-extraviadas">🐶 Mascotas Extraviadas</button>
+<script>
+    document.getElementById('btn-mascotas-extraviadas').addEventListener('click', function() {
+        window.location.href = 'http://localhost/Alcaldia/mascotas-extraviadas';
+    });
+</script>
         </section>
         <section class="slider">
             
